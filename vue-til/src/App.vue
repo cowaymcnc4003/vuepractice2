@@ -1,9 +1,14 @@
 <template>
-  <div id="id">123</div>
+  <div class="app">
+    <app-hearder></app-hearder>
+  </div>
 </template>
 
 <script>
-export default {};
+import AppHearder from './components/common/AppHearder.vue';
+export default {
+  components: { AppHearder },
+};
 </script>
 
 <style>
