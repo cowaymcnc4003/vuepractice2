@@ -1,5 +1,7 @@
 <template>
-  <div>회원가입 페이지</div>
+  <div>
+    <h1 class="page-header">회원 가입 페이지</h1>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>못찾는 페이지 form입니다.</div>
+  <div>notFoundPage</div>
 </template>
 
 <script>

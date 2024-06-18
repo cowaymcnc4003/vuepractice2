@@ -1,5 +1,5 @@
 <template>
-  <div>게시판 등록 페이지</div>
+  <div class="form-container"></div>
 </template>
 
 <script>
