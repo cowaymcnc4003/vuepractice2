@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
-  </div>
+  <div id="id">123</div>
 </template>
+
+<script>
+export default {};
+</script>
 
 <style>
 @import './css/reset.css';
