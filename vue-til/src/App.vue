@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <app-hearder></app-hearder>
+    <router-view></router-view>
   </div>
 </template>
 
