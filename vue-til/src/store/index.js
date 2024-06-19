@@ -12,8 +12,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    token: getAuthFromCookie || '',
-    username: getUserFromCookie || '',
+    token: getAuthFromCookie() || '',
+    username: getUserFromCookie() || '',
   },
   getters: {
     isLogin: state => state.username,
