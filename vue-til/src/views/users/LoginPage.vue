@@ -1,11 +1,15 @@
 <template>
   <div>
     <h1 class="page-header">로그인 페이지</h1>
+    <login-form></login-form>
   </div>
 </template>
 
 <script>
-export default {};
+import LoginForm from '../../components/users/LoginForm.vue';
+export default {
+  components: { LoginForm },
+};
 </script>
 
 <style></style>
