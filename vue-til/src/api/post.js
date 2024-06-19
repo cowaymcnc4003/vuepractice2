@@ -4,4 +4,8 @@ function fetchPost() {
   return posts.get('/');
 }
 
-export { fetchPost };
+function fetchPostCreate(postsData) {
+  return posts.post('/', postsData);
+}
+
+export { fetchPost, fetchPostCreate };

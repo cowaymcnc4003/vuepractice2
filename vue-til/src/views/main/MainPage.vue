@@ -15,9 +15,9 @@
         </ul>
       </template>
     </div>
-    <a class="create-button">
+    <router-link :to="`/create`" class="create-button">
       <i class="ion-md-add"></i>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -32,16 +32,21 @@ export default {
       postItems: [],
     };
   },
-  async created() {
-    try {
-      this.loading = true;
-      const res = await this.$store.dispatch('POSTLIST');
-      this.loading = false;
-      this.postItems = res.posts;
-      console.log(this.postItems);
-    } catch (error) {
-      console.log(error);
-    }
+  created() {
+    this.fetchNotes();
+  },
+  methods: {
+    async fetchNotes() {
+      try {
+        this.loading = true;
+        const res = await this.$store.dispatch('POSTLIST');
+        this.loading = false;
+        this.postItems = res.posts;
+        console.log(this.postItems);
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>
