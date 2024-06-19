@@ -4,4 +4,8 @@ function registerUser(userData) {
   return instence.post('/login', userData);
 }
 
-export { registerUser };
+function signupUser(userData) {
+  return instence.post('/signup', userData);
+}
+
+export { registerUser, signupUser };

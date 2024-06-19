@@ -10,8 +10,8 @@
       <!-- 1 -->
       <a class="logout-button"> Logout </a>
       <!-- 2 -->
-      <a>로그인</a>
-      <a>회원가입</a>
+      <router-link :to="`/login`">로그인</router-link>
+      <router-link :to="`/signup`">회원가입</router-link>
     </div>
   </header>
 </template>

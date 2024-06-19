@@ -1,4 +1,4 @@
-import { registerUser } from '@/api/auth';
+import { registerUser, signupUser } from '@/api/auth';
 import { saveAuthToCookie, saveUserToCookie } from '@/utils/cookies';
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -28,6 +28,10 @@ export default new Vuex.Store({
       commit('setUserName', data.user.nickname);
       saveAuthToCookie(data.token);
       saveUserToCookie(data.user.nickname);
+      return data;
+    },
+    async SIGNUP(context, userData) {
+      const { data } = await signupUser(userData);
       return data;
     },
   },
