@@ -11,6 +11,7 @@
             v-for="postItem in postItems"
             :postItem="postItem"
             :key="postItem._id"
+            @refesh="fetchNotes"
           ></post-list-form>
         </ul>
       </template>

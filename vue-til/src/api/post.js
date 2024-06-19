@@ -16,4 +16,14 @@ function fetchPostEdit(postsData) {
   return posts.put(postsData._id, postsData);
 }
 
-export { fetchPosts, fetchPostCreate, fetchPost, fetchPostEdit };
+function fetchPostDelete(id) {
+  return posts.delete(id);
+}
+
+export {
+  fetchPosts,
+  fetchPostCreate,
+  fetchPost,
+  fetchPostEdit,
+  fetchPostDelete,
+};
