@@ -1,5 +1,10 @@
 import { registerUser } from '@/api/auth';
-import { saveAuthToCookie, saveUserToCookie } from '@/utils/cookies';
+import {
+  getAuthFromCookie,
+  getUserFromCookie,
+  saveAuthToCookie,
+  saveUserToCookie,
+} from '@/utils/cookies';
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -7,8 +12,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    token: '',
-    username: '',
+    token: getAuthFromCookie || '',
+    username: getUserFromCookie || '',
   },
   getters: {
     isLogin: state => state.username,
