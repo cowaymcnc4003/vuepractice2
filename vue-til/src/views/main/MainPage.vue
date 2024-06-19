@@ -39,7 +39,7 @@ export default {
     async fetchNotes() {
       try {
         this.loading = true;
-        const res = await this.$store.dispatch('POSTLIST');
+        const res = await this.$store.dispatch('POSTLISTS');
         this.loading = false;
         this.postItems = res.posts;
         console.log(this.postItems);

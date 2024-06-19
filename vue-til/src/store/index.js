@@ -1,5 +1,10 @@
 import { registerUser, signupUser } from '@/api/auth';
-import { fetchPost, fetchPostCreate } from '@/api/post';
+import {
+  fetchPosts,
+  fetchPostCreate,
+  fetchPost,
+  fetchPostEdit,
+} from '@/api/post';
 import {
   getAuthFromCookie,
   getUserFromCookie,
@@ -46,12 +51,20 @@ export default new Vuex.Store({
       const { data } = await signupUser(userData);
       return data;
     },
-    async POSTLIST() {
-      const { data } = await fetchPost();
+    async POSTLISTS() {
+      const { data } = await fetchPosts();
       return data;
     },
     async POSTCREATE(context, postData) {
       const { data } = await fetchPostCreate(postData);
+      return data;
+    },
+    async POSTLIST(context, id) {
+      const { data } = await fetchPost(id);
+      return data;
+    },
+    async POSTEDIT(context, postData) {
+      const { data } = await fetchPostEdit(postData);
       return data;
     },
   },
