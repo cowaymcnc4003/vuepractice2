@@ -1,8 +1,9 @@
 <template>
   <li>
-    <div class="post-title"></div>
-    <div class="post-contents"></div>
+    <div class="post-title">{{ postItem.title }}</div>
+    <div class="post-contents">{{ postItem.contents }}</div>
     <div class="post-time">
+      {{ postItem.createdAt | formatDate }}
       <i class="icon ion-md-create"></i>
       <i class="icon ion-md-trash"></i>
     </div>
@@ -10,7 +11,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    postItem: {
+      type: Object,
+      require: true,
+    },
+  },
+};
 </script>
 
 <style></style>

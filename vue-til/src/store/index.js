@@ -1,4 +1,5 @@
 import { registerUser, signupUser } from '@/api/auth';
+import { fetchPost } from '@/api/post';
 import { saveAuthToCookie, saveUserToCookie } from '@/utils/cookies';
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -20,6 +21,12 @@ export default new Vuex.Store({
     setUserName(state, username) {
       state.username = username;
     },
+    clearUserName(state) {
+      state.username = '';
+    },
+    clearToken: state => {
+      return (state.token = '');
+    },
   },
   actions: {
     async LOGIN({ commit }, userData) {
@@ -32,6 +39,10 @@ export default new Vuex.Store({
     },
     async SIGNUP(context, userData) {
       const { data } = await signupUser(userData);
+      return data;
+    },
+    async POSTLIST() {
+      const { data } = await fetchPost();
       return data;
     },
   },
